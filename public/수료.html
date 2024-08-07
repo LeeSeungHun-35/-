@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT 관련 수료 & 활동</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #news-bar {
+            width: 100%;
+            background: #282c34;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 15px 15px;
+            font: 21px bold;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        #news-bar a {
+            text-decoration: none;
+            color: #61dafb;
+            font-size: 18px;
+        }
+
+        #news-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding-top: 80px;
+            /* 뉴스 바 높이만큼 패딩 추가 */
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .box {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: left;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            color: #282c34;
+        }
+
+        .box p {
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282c34;
+            color: white;
+        }
+
+        caption {
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="news-bar">
+        <a href="index.html">홈으로</a> |
+        <a href="https://shsecurity1.tistory.com/">블로그</a>
+    </div>
+
+    <div class="content">
+        <div class="box-container">
+            <div class="box">
+                <h3>ing</h3>
+                <p>SW전문인재양성 교육생</p>
+                <p>대구경찰청 사이버수사과 대외활동</p>
+            </div>
+            <div class="box">
+                <h3>IT 전문성 & 활동 기록</h3>
+                <table>
+                    <caption>교육 및 활동</caption>
+                    <tr>
+                        <th>교육 과정</th>
+                        <th>교육 기관</th>
+                    </tr>
+                    <tr>
+                        <td>랜섬웨어 이해와 방어</td>
+                        <td>동남정보보호지원센터</td>
+                    </tr>
+                    <tr>
+                        <td>군장병 AI·SW 역량강화 개발과정</td>
+                        <td>kakao x goorm</td>
+                    </tr>
+                    <tr>
+                        <td>악성코드</td>
+                        <td>한국정보보호산업협회</td>
+                    </tr>
+                    <tr>
+                        <td>ICS&OT 산업제어시스템 보안 및 대응방안</td>
+                        <td>쿤텍(주)</td>
+                    </tr>
+                    <tr>
+                        <td>KUCIS소속 해킹 동아리 2년</td>
+                        <td>한국정보보호산업협회</td>
+                    </tr>
+                    <tr>
+                        <td>인공지능 기본과전(AI기술 활용)</td>
+                        <td>(재)포항테크노파크</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

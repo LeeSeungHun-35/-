@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <style>
+        body {
+            background-color: #100e17;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation bar styles */
+        #news-bar {
+            width: 100%;
+            background: #282c34;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 15px 15px;
+            font: 21px bold;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        #news-bar a {
+            text-decoration: none;
+            color: #61dafb;
+            font-size: 18px;
+        }
+
+        #news-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            /* Maximum width for larger screens */
+            margin: 60px auto 20px;
+            /* Adjusted margin for navigation bar */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 200px;
+            background-color: #17141d;
+            border-radius: 10px;
+            box-shadow: -1rem 0 3rem #000;
+            transition: 0.4s ease-out;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+        }
+
+        .title {
+            font-weight: 300;
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 20px;
+            }
+
+            .card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="news-bar">
+        <a href="index.html">홈으로</a> |
+        <a href="https://shsecurity1.tistory.com/">블로그</a>
+    </div>
+    <div class="container">
+        <div class="header">aespa</div>
+        <div class="cards">
+            <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%95%98%EB%8B%88(NewJeans)';">
+                <img src="img/에스파/카리나.png" alt="카리나">
+                <h3 class="title">카리나</h3>
+            </div>
+            <div class="card" onclick="window.location.href='https://namu.wiki/w/%EC%9C%88%ED%84%B0(aespa)';">
+                <img src="img/에스파/윈터.png" alt="윈터">
+                <h3 class="title">윈터</h3>
+            </div>
+            <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%95%98%EB%8B%88(NewJeans)';">
+                <img src="img/에스파/닝닝.png" alt="닝닝">
+                <h3 class="title">닝닝</h3>
+            </div>
+            <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%95%98%EB%8B%88(NewJeans)';">
+                <img src="img/에스파/지젤.png" alt="지젤">
+                <h3 class="title">지젤</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
