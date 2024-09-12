@@ -7,54 +7,52 @@
     <title>NewJeans</title>
     <style>
         body {
-            background-color: #100e17;
-            font-family: 'Open Sans', sans-serif;
+            background-color: #FFC0CB;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
-        /* Navigation bar styles */
         #news-bar {
             width: 100%;
-            background: #282c34;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            background: #2c3e50; 
+            color: #ecf0f1; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 0 0 15px 15px;
-            font: 21px bold;
-            padding: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
+            font-size: 18px;
+            padding: 15px;
+            text-align: center;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            text-align: center;
         }
 
         #news-bar a {
             text-decoration: none;
-            color: #61dafb;
-            font-size: 18px;
+            color: #ffffff; 
+            margin: 0 10px;
+            font-weight: bold;
         }
 
         #news-bar a:hover {
             text-decoration: underline;
+            color: #2980b9; 
         }
 
         .container {
             width: 100%;
             max-width: 1200px;
-            /* Maximum width for larger screens */
             margin: 80px auto 20px;
-            /* Center the container and adjust for navigation bar */
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
         }
 
         .header {
-            color: white;
-            font-size: 24px;
+            color: #2c3e50; 
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 20px;
         }
@@ -64,7 +62,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            /* Space between cards */
         }
 
         .card {
@@ -72,35 +69,72 @@
             flex-direction: column;
             width: 100%;
             max-width: 200px;
-            /* Max width for larger screens */
-            background-color: #17141d;
-            border-radius: 10px;
-            box-shadow: -1rem 0 3rem #000;
-            transition: 0.4s ease-out;
+            background-color: #ffffff; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
             cursor: pointer;
             text-decoration: none;
-            color: white;
-            text-align: center;
+            color: #333;
             overflow: hidden;
         }
 
         .card img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
         }
 
         .card:hover {
-            transform: translateY(-20px);
+            transform: scale(1.05);
         }
 
         .title {
-            font-weight: 300;
-            margin: 10px 0;
+            font-weight: 500;
+            margin: 10px;
         }
 
-        /* Responsive Design */
+        .info-box {
+            background-color: #F9F9F9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left; 
+        }
+
+        .info-box h2 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            color: #3498db; 
+        }
+
+        .info-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .info-box th,
+        .info-box td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .info-box th {
+            background-color: #f0f0f0; 
+            color: #2c3e50; 
+        }
+
+        .info-box td {
+            background-color: #f9f9f9; 
+            color: #333;
+        }
+
         @media (max-width: 768px) {
             .cards {
                 flex-direction: column;
@@ -109,20 +143,16 @@
 
             .card {
                 width: 90%;
-                /* Adjust width for smaller screens */
-                max-width: 100%;
             }
         }
 
         @media (max-width: 480px) {
             .header {
-                font-size: 20px;
-                /* Smaller header text for very small screens */
+                font-size: 24px;
             }
 
             .card img {
                 height: 180px;
-                /* Adjust image height for small screens */
             }
         }
     </style>
@@ -130,35 +160,110 @@
 
 <body>
     <div id="news-bar">
-        <a href="index.html">홈으로</a> |
+        <a href="first.html">홈으로</a> |
         <a href="https://shsecurity1.tistory.com/">블로그</a>
     </div>
     <div class="container">
         <div class="header">NewJeans</div>
         <div class="cards">
-            <!-- '해린' 카드 클릭 시 외부 링크로 이동 -->
             <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%95%B4%EB%A6%B0';">
-                <img src="img/뉴진스/해린.png" alt="해린">
+                <img src="img/뉴진스/해린.jpg" alt="해린">
                 <h3 class="title">해린</h3>
             </div>
-            <!-- 나머지 카드들도 각각 이미지 추가 -->
             <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%95%98%EB%8B%88(NewJeans)';">
-                <img src="img/뉴진스/하니.png" alt="하니">
+                <img src="img/뉴진스/하니.jpg" alt="하니">
                 <h3 class="title">하니</h3>
             </div>
             <div class="card" onclick="window.location.href='https://namu.wiki/w/%EB%AF%BC%EC%A7%80(NewJeans)';">
-                <img src="img/뉴진스/민지.png" alt="민지">
+                <img src="img/뉴진스/민지.jpg" alt="민지">
                 <h3 class="title">민지</h3>
             </div>
-            <div class="card"
-                onclick="window.location.href='https://namu.wiki/w/%EB%8B%A4%EB%8B%88%EC%97%98(NewJeans)';">
-                <img src="img/뉴진스/다니엘.png" alt="다니엘">
+            <div class="card" onclick="window.location.href='https://namu.wiki/w/%EB%8B%A4%EB%8B%88%EC%97%98(NewJeans)';">
+                <img src="img/뉴진스/다니엘.jpg" alt="다니엘">
                 <h3 class="title">다니엘</h3>
             </div>
             <div class="card" onclick="window.location.href='https://namu.wiki/w/%ED%98%9C%EC%9D%B8';">
                 <img src="img/뉴진스/혜인.png" alt="혜인">
                 <h3 class="title">혜인</h3>
             </div>
+        </div>
+
+        <div class="info-box">
+            <h2>Member</h2>
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <th>포지션 (부정확 가능성)</th>
+                </tr>
+                <tr>
+                    <td>Minji (민지)</td>
+                    <td>리드 보컬, 서브 댄서</td>
+                </tr>
+                <tr>
+                    <td>Hani (하니)</td>
+                    <td>리드 보컬, 서브 래퍼</td>
+                </tr>
+                <tr>
+                    <td>Danielle (다니엘)</td>
+                    <td>메인 래퍼, 서브 보컬</td>
+                </tr>
+                <tr>
+                    <td>Haerin (해린)</td>
+                    <td>메인 보컬, 리드 댄서</td>
+                </tr>
+                <tr>
+                    <td>Hyein (혜인)</td>
+                    <td>서브 보컬, 서브 래퍼</td>
+                </tr>
+            </table>
+            <br><br><br>
+            <h2>수상 이력</h2>
+            <table>
+                <tr>
+                    <th>연도</th>
+                    <th>시상식</th>
+                    <th>수상 내역</th>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>Mnet Asian Music Awards (MAMA)</td>
+                    <td>베스트 뉴 여자 아티스트</td>
+                </tr>
+                <tr>
+                    <td rowspan="6">2023</td>
+                    <td>Golden Disc Awards</td>
+                    <td>디지털 음원 부문 본상</td>
+                </tr>
+                <tr>
+                    <td>Seoul Music Awards</td>
+                    <td>올해의 신인상, 디지털 음원 부문 본상</td>
+                </tr>
+                <tr>
+                    <td>Korean Music Awards</td>
+                    <td>올해의 신인상</td>
+                </tr>
+                <tr>
+                    <td>Asia Artist Awards</td>
+                    <td>신인상</td>
+                </tr>
+                <tr>
+                    <td>Billboard Korea Music Awards</td>
+                    <td>올해의 아티스트</td>
+                </tr>
+                <tr>
+                    <td>Melon Music Awards</td>
+                    <td>신인상</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2024</td>
+                    <td>Genius Korea Awards</td>
+                    <td>올해의 앨범</td>
+                </tr>
+                <tr>
+                    <td>MTV Europe Music Awards</td>
+                    <td>베스트 뉴 아티스트</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+  <title>LSH's Web Zone</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden; /* 가로 스크롤 방지 */
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/일반/modern.jpg') no-repeat center center/cover;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ecf0f1;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    .banner {
+      background: url('simple-banner.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 60px; /* header 높이 만큼 여백 */
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    .banner h1 {
+      font-family: "Gugi", sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      color: red;
+    }
+
+    .banner p {
+      font-size: 18px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      color: red;
+    }
+
+    main {
+      padding: 20px;
+      margin-top: 60px; /* header 높이 만큼 여백 */
+      box-sizing: border-box;
+    }
+
+    .about {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about h2 {
+      font-family: "Gugi", sans-serif;
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      font-size: 20px;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, #2c3e50, #34495e);
+      color: #ecf0f1;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #34495e;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      background-color: #1abc9c;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-weight: 500;
+    }
+
+    .feature-card a:hover {
+      background-color: #ff0000;
+    }
+
+    .feature-card h3 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 24px;
+    }
+
+    .feature-card p {
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      padding: 20px;
+      text-align: center;
+      color: #ecf0f1;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      box-sizing: border-box;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* 모바일 뷰 */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        display: none;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .banner {
+        height: 200px;
+      }
+
+      .banner h1 {
+        font-size: 32px;
+      }
+
+      .banner p {
+        font-size: 16px;
+      }
+
+      .about h2 {
+        font-size: 28px;
+      }
+
+      .about p {
+        font-size: 16px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .feature-card h3 {
+        font-size: 20px;
+      }
+
+      .feature-card p {
+        font-size: 14px;
+      }
+
+      .feature-card a {
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="first.html">홈</a></li>
+        <li><a href="https://shsecurity1.tistory.com/">블로그</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>Welcome to LSH's Web Zone</h1>
+    <p>모의해킹 & 취약점 분석을 위한 간단 웹 사이트</p>
+  </section>
+
+  <main>
+    <section class="about">
+      <h2 id="clock"></h2>
+      <p>모의 해킹과 취약점 분석을 위해 풀스택 개발 전반을 공부하고 있습니다.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>수료 및 활동 이력</h3>
+        <p>수료 및 활동 이력 확인</p>
+        <a href="수료.html">보러가기</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>갤러리</h3>
+        <p>제작 중..</p>
+        <a href="갤러리모음.html">사진 보기</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>게임</h3>
+        <p>제작 중..</p>
+        <a href="game_.html">게임하기</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>새로운 기능</h3>
+        <p>상세 설명 표시</p>
+        <a href="../movie/index.html">보러가기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 LSH. All rights reserved.</p>
+    <p>Contact: ish0542@naver.com</p>
+  </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+
+</html>

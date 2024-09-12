@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* 높이를 100%로 설정 */
+            margin: 0;
+            /* 기본 마진 제거 */
+            padding: 0;
+            /* 기본 패딩 제거 */
+            overflow: hidden;
+            /* 스크롤 방지 */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img/일반/dark.jpg');
+            background-size: cover;
+            /* 이미지가 전체 화면을 덮도록 설정 */
+            background-position: center;
+            /* 이미지가 중앙에 위치하도록 설정 */
+            background-repeat: no-repeat;
+            /* 이미지가 반복되지 않도록 설정 */
+        }
+
+        .blur-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* 반투명 배경 색상 */
+            border-radius: 10px;
+            color: #FFFFFF;
+            max-width: 80%;
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            /* 배경 블러처리 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            /* 그림자 효과 */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f3ff44;
+            border: none;
+            border-radius: 5px;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #32CD32;
+        }
+
+        .result {
+            color: red;
+            /* 결과 텍스트를 빨간색으로 설정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blur-box">
+        <h1>가위바위보</h1>
+        <button onclick="playGame('가위')">가위</button>
+        <button onclick="playGame('바위')">바위</button>
+        <button onclick="playGame('보')">보</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function playGame(userChoice) {
+            const choices = ['바위', '보', '가위'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            let result;
+            if (userChoice === computerChoice) {
+                result = "다시 도전";
+            } else if (
+                (userChoice === '바위' && computerChoice === '가위') ||
+                (userChoice === '보' && computerChoice === '바위') ||
+                (userChoice === '가위' && computerChoice === '보')
+            ) {
+                result = "승리";
+            } else {
+                result = "패배";
+            }
+
+            document.getElementById('result').innerHTML = `당신: ${userChoice}<br>컴퓨터: ${computerChoice}<br><span class="result">${result}</span>`;
+        }
+    </script>
+</body>
+
+</html>

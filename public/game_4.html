@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow-y: auto;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        .buttons {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        button, a {
+            padding: 10px 20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        button {
+            background-color: #28a745; /* Green color for the button */
+        }
+        .description-button {
+            background-color: #17a2b8; /* Blue color for the description button */
+        }
+        #reset-button {
+            display: none;
+        }
+        .buttons a {
+            background-color: #007bff; /* Default blue for links */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="fixed-container" class="input-container">
+            <input class="input">
+            <input class="input">
+            <input class="input">
+            <input class="input">
+            <input class="input">
+        </div>
+        <div id="dynamic-container"></div>
+        <div class="buttons">
+            <a href="game4-ex.html" class="description-button">설명</a>
+            <button id="submit-button">제출</button>
+            <button id="reset-button">리셋</button>
+        </div>
+    </div>
+    <script>
+        var 답 = 'mouse';
+        var attempts = 0;
+        var maxAttempts = 10;
+
+        document.querySelector('#submit-button').addEventListener('click', function() {
+            if (attempts >= maxAttempts) return;
+
+            var inputContainers = document.querySelectorAll('#dynamic-container .input-container');
+            var latestContainer = inputContainers.length > 0 ? inputContainers[inputContainers.length - 1] : null;
+            var inputs = latestContainer ? latestContainer.querySelectorAll('.input') : document.querySelectorAll('#fixed-container .input');
+
+            for (let i = 0; i < 5; i++) {
+                if (inputs[i].value == 답[i]) {
+                    inputs[i].style.background = 'blue';
+                } else if (답.includes(inputs[i].value)) {
+                    inputs[i].style.background = 'yellow';
+                } else {
+                    inputs[i].style.background = 'red';
+                }
+            }
+
+            attempts++;
+            
+            if (attempts < maxAttempts) {
+                var template = `
+                    <div class="input-container">
+                        <input class="input">
+                        <input class="input">
+                        <input class="input">
+                        <input class="input">
+                        <input class="input">
+                    </div>`;
+                document.querySelector('#dynamic-container').insertAdjacentHTML('beforeend', template);
+            }
+
+            if (attempts >= maxAttempts) {
+                document.querySelector('#submit-button').style.display = 'none';
+                document.querySelector('#reset-button').style.display = 'inline-block';
+            }
+        });
+
+        document.querySelector('#reset-button').addEventListener('click', function() {
+            attempts = 0;
+            document.querySelector('#dynamic-container').innerHTML = '';
+            var fixedInputs = document.querySelectorAll('#fixed-container .input');
+            fixedInputs.forEach(input => {
+                input.value = '';
+                input.style.background = '';
+            });
+            document.querySelector('#submit-button').style.display = 'inline-block';
+            document.querySelector('#reset-button').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

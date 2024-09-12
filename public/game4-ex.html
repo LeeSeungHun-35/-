@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 설명</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .description {
+            max-width: 800px;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .description p {
+            margin: 0 0 10px;
+            line-height: 1.6;
+        }
+        .description ul {
+            padding-left: 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .description li {
+            margin-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>게임 설명</h2>
+    <div class="description">
+        <p>이 게임의 목표는 주어진 특정 단어를 추측하는 것입니다.</p>
+        <ul>
+            <li><strong>1.</strong> 화면 상단에 고정된 5개의 입력 칸이 있습니다. 사용자는 이 칸에 단어를 입력합니다.</li>
+            <li><strong>2.</strong> 제출 버튼을 클릭할 때마다, 바로 아래에 새로운 5개의 입력 칸이 추가됩니다. <br>(최대 10번까지 입력할 수 있습니다.)</li>
+            <li><strong>3.</strong> 입력 칸의 색상으로 맞춤 여부를 표시합니다:
+                <ul>
+                    <li><strong>초록색:</strong> 해당 위치의 글자가 정답과 정확히 일치합니다.</li>
+                    <li><strong>노란색:</strong> 글자는 정답에 포함되지만 위치는 다릅니다.</li>
+                    <li><strong>빨간색:</strong> 글자가 정답에 포함되지 않습니다.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="image-container">
+        <img src="img/일반/게임 설명.png" alt="게임 설명 이미지">
+    </div>
+</body>
+</html>

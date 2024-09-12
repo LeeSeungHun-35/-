@@ -11,40 +11,43 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             margin: 0;
         }
-
         .game-container {
             background: #ffffff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 132, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 1000px;
+            max-width: 900px;
             width: 100%;
         }
-
         button {
             margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #ffffff;
         }
-
+        button:hover {
+            background-color: #0056b3;
+        }
         .hidden {
             display: none;
         }
-
         .animal-list {
             text-align: left;
             margin-bottom: 20px;
+            font-size: 14px;
         }
-
         .animal-list h2 {
-            color: blue;
+            color: #007bff;
+            margin-bottom: 10px;
         }
-
         .animal-list span {
             display: inline-block;
             margin: 5px;
@@ -53,30 +56,12 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>동물 스무고개 게임</h1>
+        <h1>동물 스무고개 게임</h1>    <h2>(미완성)</h2>
+
         <div class="animal-list">
             <h2>가능 동물 리스트</h2>
             <div>
-                <span>고양이</span> <span>강아지</span> <span>거북이</span> <span>토끼</span> <span>뱀</span>
-                <span>사자</span> <span>호랑이</span> <span>표범</span> <span>치타</span> <span>하이에나</span>
-                <span>기린</span> <span>코끼리</span> <span>코뿔소</span> <span>하마</span> <span>악어</span>
-                <span>펭귄</span> <span>부엉이</span> <span>올빼미</span> <span>곰</span> <span>돼지</span>
-                <span>소</span> <span>닭</span> <span>독수리</span> <span>타조</span> <span>고릴라</span>
-                <span>오랑우탄</span> <span>침팬지</span> <span>원숭이</span> <span>코알라</span> <span>캥거루</span>
-                <span>고래</span> <span>상어</span> <span>칠면조</span> <span>직박구리</span> <span>쥐</span>
-                <span>청설모</span> <span>메추라기</span> <span>앵무새</span> <span>삵</span> <span>스라소니</span>
-                <span>판다</span> <span>오소리</span> <span>오리</span> <span>거위</span> <span>백조</span>
-                <span>두루미</span> <span>고슴도치</span> <span>두더지</span> <span>우파루파</span> <span>맹꽁이</span>
-                <span>너구리</span> <span>개구리</span> <span>두꺼비</span> <span>카멜레온</span> <span>이구아나</span>
-                <span>노루</span> <span>제비</span> <span>까치</span> <span>고라니</span> <span>수달</span>
-                <span>당나귀</span> <span>순록</span> <span>염소</span> <span>공작</span> <span>바다표범</span>
-                <span>들소</span> <span>박쥐</span> <span>참새</span> <span>물개</span> <span>바다사자</span>
-                <span>살모사</span> <span>구렁이</span> <span>얼룩말</span> <span>산양</span> <span>멧돼지</span>
-                <span>카피바라</span> <span>도롱뇽</span> <span>북극곰</span> <span>퓨마</span> <span>미어캣</span>
-                <span>코요테</span> <span>라마</span> <span>딱따구리</span> <span>기러기</span> <span>비둘기</span>
-                <span>스컹크</span> <span>돌고래</span> <span>까마귀</span> <span>매</span> <span>낙타</span>
-                <span>여우</span> <span>사슴</span> <span>늑대</span> <span>재규어</span> <span>알파카</span>
-                <span>양</span> <span>다람쥐</span> <span>담비</span> <span>사막여우</span> <span>북극여우</span>
+                <!-- 동물 리스트를 자동으로 렌더링하기 위한 스크립트 추가 -->
             </div>
         </div>
         <hr>
@@ -91,10 +76,15 @@
     <script>
         // 동물 목록
         const animals = [
-            '고양이', '강아지', '거북이', '토끼', '뱀', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '악어', '펭귄', '부엉이', '올빼미', '곰', '돼지', '소', '닭', '독수리', '타조',
-            '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미',
-            '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새',
-            '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타',
+            '고양이', '강아지', '거북이', '토끼', '뱀', '사자', '호랑이', '표범', '치타', '하이에나',
+            '기린', '코끼리', '코뿔소', '하마', '악어', '펭귄', '부엉이', '올빼미', '곰', '돼지',
+            '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루',
+            '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니',
+            '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이',
+            '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달',
+            '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자',
+            '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣',
+            '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타',
             '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'
         ];
 
@@ -103,49 +93,69 @@
 
         // 질문 목록
         const questions = [
-            { question: '이 동물은 포유류인가요?', yes: ['고양이', '강아지', '거북이', '토끼', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '곰', '돼지', '소', '부엉이', '올빼미', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'], no: ['뱀', '악어', '펭귄', '닭'] },
-            { question: '이 동물은 주로 야행성인가요?', yes: ['부엉이', '올빼미', '뱀', '거북이', '박쥐', '청설모', '메추라기', '앵무새', '스컹크'], no: ['고양이', '강아지', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '곰', '돼지', '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] },
-            { question: '이 동물은 날 수 있나요?', yes: ['부엉이', '올빼미', '독수리', '닭', '앵무새', '직박구리', '기러기', '비둘기', '까마귀', '매'], no: ['고양이', '강아지', '거북이', '토끼', '뱀', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '악어', '펭귄', '곰', '돼지', '소', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '쥐', '청설모', '메추라기', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '스컹크', '돌고래', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] },
-            { question: '이 동물은 물속에서 살 수 있나요?', yes: ['악어', '펭귄', '물개', '바다사자', '상어', '고래', '돌고래', '해마'], no: ['고양이', '강아지', '거북이', '토끼', '뱀', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '곰', '돼지', '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] },
-            { question: '이 동물은 귀가 큰가요?', yes: ['토끼', '부엉이', '올빼미', '귀뚜라미'], no: ['고양이', '강아지', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '악어', '펭귄', '곰', '돼지', '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] }
+            { question: '이 동물은 포유류인가요?', yes: ['고양이', '강아지', '토끼', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '곰', '돼지', '소', '부엉이', '올빼미', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'], no: ['뱀', '악어', '펭귄', '닭'] },
+            { question: '이 동물은 주로 야행성인가요?', yes: ['부엉이', '올빼미', '뱀', '거북이', '박쥐', '청설모', '메추라기', '앵무새', '스컹크'], no: ['고양이', '강아지', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '곰', '돼지', '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '고래', '상어', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '삵', '스라소니', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '참새', '물개', '바다사자', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '돌고래', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] },
+            { question: '이 동물은 물속에서 살아요?', yes: ['악어', '펭귄', '고래', '상어', '물개', '바다사자', '돌고래'], no: ['고양이', '강아지', '거북이', '토끼', '뱀', '사자', '호랑이', '표범', '치타', '하이에나', '기린', '코끼리', '코뿔소', '하마', '악어', '펭귄', '부엉이', '올빼미', '곰', '돼지', '소', '닭', '독수리', '타조', '고릴라', '오랑우탄', '침팬지', '원숭이', '코알라', '캥거루', '칠면조', '직박구리', '쥐', '청설모', '메추라기', '앵무새', '판다', '오소리', '오리', '거위', '백조', '두루미', '고슴도치', '두더지', '우파루파', '맹꽁이', '너구리', '개구리', '두꺼비', '카멜레온', '이구아나', '노루', '제비', '까치', '고라니', '수달', '당나귀', '순록', '염소', '공작', '바다표범', '들소', '박쥐', '참새', '살모사', '구렁이', '얼룩말', '산양', '멧돼지', '카피바라', '도롱뇽', '북극곰', '퓨마', '미어캣', '코요테', '라마', '딱따구리', '기러기', '비둘기', '스컹크', '까마귀', '매', '낙타', '여우', '사슴', '늑대', '재규어', '알파카', '양', '다람쥐', '담비', '사막여우', '북극여우'] }
         ];
 
-        let questionIndex = 0;
-        let remainingAnimals = [...animals];
+        // 현재 질문
+        let currentQuestionIndex = 0;
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const feedbackElement = document.getElementById('feedback');
+            const resetButton = document.getElementById('resetButton');
+
+            // 다음 질문 설정
+            if (currentQuestionIndex < questions.length) {
+                questionElement.textContent = questions[currentQuestionIndex].question;
+                feedbackElement.textContent = '';
+                resetButton.classList.add('hidden');
+            } else {
+                questionElement.textContent = '게임을 종료합니다. 당신이 생각한 동물은 무엇인가요?';
+                feedbackElement.textContent = '게임이 끝났습니다. 재시작 버튼을 클릭하세요.';
+                resetButton.classList.remove('hidden');
+            }
+        }
 
         function answer(response) {
-            const currentQuestion = questions[questionIndex];
+            const questionElement = document.getElementById('question');
+            const feedbackElement = document.getElementById('feedback');
+
+            const currentQuestion = questions[currentQuestionIndex];
             if (response === 'yes') {
-                remainingAnimals = remainingAnimals.filter(animal => currentQuestion.yes.includes(animal));
-            } else {
-                remainingAnimals = remainingAnimals.filter(animal => !currentQuestion.yes.includes(animal));
-            }
-            questionIndex++;
-            if (questionIndex < questions.length) {
-                document.getElementById('question').textContent = questions[questionIndex].question;
-            } else {
-                if (remainingAnimals.length === 1) {
-                    document.getElementById('feedback').textContent = `정답! 컴퓨터가 선택한 동물은 ${remainingAnimals[0]}입니다.`;
-                } else if (remainingAnimals.length > 1) {
-                    document.getElementById('feedback').textContent = `정답을 찾지 못했습니다. 남은 동물들: ${remainingAnimals.join(', ')}`;
+                if (currentQuestion.yes.includes(selectedAnimal)) {
+                    feedbackElement.textContent = '맞았습니다!';
+                    questionElement.textContent = `정답은 ${selectedAnimal}입니다!`;
+                    document.getElementById('resetButton').classList.remove('hidden');
                 } else {
-                    document.getElementById('feedback').textContent = '조건에 맞는 동물이 없습니다.';
+                    feedbackElement.textContent = '틀렸습니다. 다음 질문으로 넘어갑니다.';
                 }
+            } else {
+                if (currentQuestion.no.includes(selectedAnimal)) {
+                    feedbackElement.textContent = '맞았습니다!';
+                    questionElement.textContent = `정답은 ${selectedAnimal}입니다!`;
+                    document.getElementById('resetButton').classList.remove('hidden');
+                } else {
+                    feedbackElement.textContent = '틀렸습니다. 다음 질문으로 넘어갑니다.';
+                }
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(showQuestion, 1000);  // 1초 후에 다음 질문 표시
+            } else {
                 document.getElementById('resetButton').classList.remove('hidden');
             }
         }
 
         function resetGame() {
-            questionIndex = 0;
-            remainingAnimals = [...animals];
-            document.getElementById('question').textContent = questions[questionIndex].question;
-            document.getElementById('feedback').textContent = '';
-            document.getElementById('resetButton').classList.add('hidden');
+            selectedAnimal = animals[Math.floor(Math.random() * animals.length)];
+            currentQuestionIndex = 0;
+            showQuestion();
         }
 
-        // 초기 질문 설정
-        document.getElementById('question').textContent = questions[questionIndex].question;
+        // 게임 시작
+        showQuestion();
     </script>
 </body>
-
 </html>

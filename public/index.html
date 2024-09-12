@@ -1,447 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>개인 사이트</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap"
+        rel="stylesheet">
+    <title>start_page</title>
+    <style>
+   
+        body {
+            
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            /* 가로 스크롤 방지 */
+            overflow-y: auto;
+            /* 세로 스크롤 허용 */
+        }
 
-    .main {
-      width: 100%;
-      height: 100vh; /* 전체 화면 높이 */
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url('img/일반/program.jpg');
-      background-position: center;
-      background-size: cover;
-      display: flex;
-      align-items: center; /* 수직 중앙 정렬 */
-      justify-content: center; /* 수평 중앙 정렬 */
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .navbar {
-      width: 100%;
-      background: #333;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      padding: 15px 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            /* 최소 높이를 100vh로 설정 */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/일반/hacker2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* 콘텐츠를 세로로 정렬 */
+            padding-top: 80px;
+            /* 헤더의 높이만큼 여백 추가 */
+        }
 
-    .navbar .logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: #00ffdd;
-    }
+        .header {
+            font-family: "Edu VIC WA NT Beginner", cursive;
+            font-optical-sizing: auto;
+            font-weight: 15;
+            font-style: normal;
 
-    .navbar .menu {
-      display: flex;
-      align-items: center;
-    }
+            width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* 배경색을 추가하여 헤더가 더 잘 보이도록 함 */
+            z-index: 1000;
+            /* 헤더가 다른 요소들 위에 오도록 설정 */
+        }
 
-    .navbar .menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+        .header h1 a {
+            font-family: "Grey Qo", cursive;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            color: red;
+        }
 
-    .navbar .menu ul li {
-      margin-left: 20px;
-    }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
 
-    .navbar .menu ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+        .nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
 
-    .navbar .menu ul li a:hover {
-      color: #ff5722;
-    }
+        .nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
 
-    .navbar .search {
-      display: flex;
-      align-items: center;
-    }
+        .nav ul li a:hover {
+            color: red;
+        }
 
-    .navbar .search input[type="search"] {
-      width: 200px;
-      height: 35px;
-      border: 1px solid #00ffdd;
-      border-radius: 5px 0 0 5px;
-      padding: 5px 10px;
-      font-size: 14px;
-      color: #333;
-      outline: none;
-    }
+        .hero {
+            font-family: "VT323", monospace;
+            font-weight: 400;
+            font-style: normal;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: white;
+            width: 80%;
+            max-width: 900px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-top: 20px;
+            /* 헤더와의 간격 조정 */
+        }
 
-    .navbar .search button {
-      width: 80px;
-      height: 35px;
-      background: #00ffdd;
-      border: 1px solid #00ffdd;
-      color: #333333;
-      font-size: 14px;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+        .hero-text {
+            width: 60%;
+            text-align: left;
+        }
 
-    .navbar .search button:hover {
-      background-color: #fff;
-      color: #ff5722;
-    }
+        .hero-text h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: red;
+        }
 
-    .main-content {
-      text-align: center;
-      padding: 20px;
-    }
+        .hero-text p {
+            font-size: 20px;
+        }
 
-    h1 {
-      margin: 20px 0;
-      font-size: 36px;
-      color: #00bcd4;
-      font-weight: 700;
-    }
+        .hero-text button {
+            background-color: none;
+            border: 2px solid darkseagreen;
+            color: black;
+            padding: 15px 20px;
+            border-radius: 20px;
+            margin-top: 30px;
+            outline: none;
+            cursor: pointer;
+            transition: all .4s;
+        }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
+        .hero-text button:hover {
+            background-color: red;
+            color: rgb(86, 237, 86);
+        }
 
-    .box {
-      background-color: #413f3f; /* 박스 배경 색상 변경 */
-      border: 1px solid #00bcd4;
-      border-radius: 12px;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-sizing: border-box;
-      color: white;
-    }
+        .hero-text button:focus {
+            outline: none;
+        }
 
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    }
+        .hero-text button a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
 
-    h2 {
-      color: #00bcd4;
-      font-size: 24px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+        .login-form {
+            width: 35%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
 
-    h4 {
-      color: #00bcd4;
-      font-size: 20px;
-      font-weight: 600;
-    }
+        .login-form h3 {
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
 
-    th,
-    td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
-    }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    th {
-      background-color: #00bcd4;
-      color: white;
-      font-weight: 700;
-    }
+        .login-form button:hover {
+            background-color: #555;
+        }
 
-    caption {
-      font-weight: bold;
-      margin: 10px 0;
-      font-size: 20px;
-      color: #00bcd4;
-    }
+        #notification {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            position: fixed;
+            /* 페이지를 스크롤해도 고정되도록 설정 */
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            display: none;
+            /* 처음에 숨겨진 상태 */
+            z-index: 1000;
+            /* 알림이 다른 요소들 위에 오도록 설정 */
+        }
 
-    .special-text h2 {
-      font-family: 'Gamja Flower', cursive;
-      font-weight: 400;
-      font-style: normal;
-      color: #ffffff;
-      margin: 10px 0;
-      font-size: 28px;
-    }
+        #close-notification {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
 
-    .box1 {
-      max-width: 1500px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #ffffff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      padding: 0;
-      text-align: left;
-    }
+        /* 모바일 최적화 */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
-    .box1 table {
-      width: 100%;
-    }
+            .hero-text,
+            .login-form {
+                width: 100%;
+                margin-bottom: 20px;
+            }
 
-    .box1 td {
-      vertical-align: top;
-    }
+            .hero-text h2 {
+                font-size: 30px;
+            }
 
-    .box1 img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-    }
+            .hero-text p {
+                font-size: 16px;
+            }
 
-    .box1 .text {
-      text-align: center;
-      padding: 10px;
-      line-height: 1.6;
-      color: #666;
-    }
+            .hero-text button {
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+        }
 
-    .box1 td:first-child {
-      width: 40%;
-    }
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
 
-    .box1 td:last-child {
-      width: 60%;
-    }
+            .hero-text h2 {
+                font-size: 24px;
+            }
 
-    .scrollable-box {
-      max-height: 300px;
-      overflow-y: auto;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 10px;
-      background: #ffffff;
-      box-sizing: border-box;
-    }
+            .hero-text p {
+                font-size: 14px;
+            }
 
-    .scrollable-box table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+            .hero-text button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
 
-    .scrollable-box td {
-      padding: 8px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .scrollable-box tr:nth-child(n+5) {
-      display: table-row;
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 10px;
-      }
-
-      .navbar .logo {
-        font-size: 24px;
-      }
-
-      .navbar .menu ul li {
-        margin-left: 10px;
-      }
-
-      .navbar .search input[type="search"] {
-        width: 150px;
-        height: 30px;
-        font-size: 12px;
-      }
-
-      .navbar .search button {
-        width: 70px;
-        height: 30px;
-        font-size: 12px;
-      }
-
-      .container {
-        padding: 10px;
-        gap: 10px;
-      }
-
-      .box {
-        width: calc(100% - 20px);
-        margin: 10px;
-      }
-
-      .scrollable-box {
-        max-height: 200px;
-      }
-    }
-
-    .box a {
-      color: rgb(255, 255, 255);
-      text-decoration: none; /* 밑줄 제거 */
-    }
-
-    .scrollable-box a {
-      color: black;
-      text-decoration: none; /* 밑줄 제거 */
-    }
-
-    .scrollable-box h5 {
-      margin: 0;
-    }
-
-  </style>
+            .login-form input,
+            .login-form button {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="main">
-    <div class="navbar">
-      <div class="logo">LSHUN</div>
-      <div class="menu">
-        <ul>
-          <li><a href="index.html">홈</a></li>
-          <li><a href="https://shsecurity1.tistory.com/">블로그</a></li>
-        </ul>
-      </div>
-      <div class="search">
-        <input type="search" placeholder="기능 X">
-        <button>Search</button>
-      </div>
+    <div id="notification">
+        <p>모바일 접속 시 레이아웃 등 원활하지 않을 수 있습니다.</p>
+        <button id="close-notification">닫기</button>
     </div>
-    <div class="main-content">
-      <div class="container">
-        <div class="box">
-          <h2>수료 & 이수</h2>
-          <p>IT 전문성 & 활동 기록</p>
-          <a href="수료.html">보기</a>
+
+    <div class="container">
+        <div class="header">
+            <h1><a href="#">Hacking & Development</a></h1>
         </div>
-        <div class="box">
-          <h2>미니게임</h2>
-          <a href="가바보.html">1. 가위바위보</a><br><br>
-          <a href="game_2.html">2. </a><br><br>
-          <a href="가바보.html">게임하기</a>
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Welcome to <br>LSH's page</h2>
+                <p>
+                <h4>랜덤 컨텐츠</h4>
+                </p>
+                <button><a href='first.html'>go to page</a></button>
+            </div>
+            <div class="login-form">
+                <h3>로그인</h3>
+                <form>
+                    <input type="text" placeholder="아이디" required>
+                    <input type="password" placeholder="비밀번호" required>
+                    <button type="submit">로그인</button>
+                </form>
+            </div>
         </div>
-        <div class="box">
-          <h2>해킹 취약점 Top10</h2>
-          <div class="scrollable-box">
-            <table>
-              <thead>
-                <tr>
-                  <th>OWASP TOP 10</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" style="color: black;">1. Broken Access Control</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" style="color: black;">2. Cryptographic Failures</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A03_2021-Injection/" style="color: black;">3. Injection</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A04_2021-Insecure_Design/" style="color: black;">4. Insecure Design</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/" style="color: black;">5. Security Misconfiguration</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" style="color: black;">6. Vulnerable and Outdated Components</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" style="color: black;">7. Identification and Authentication Failures</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/" style="color: black;">8. Software and Data Integrity Failures</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/" style="color: black;">9. Security Logging and Monitoring Failures</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" style="color: black;">10. Server-Side Request Forgery (SSRF)</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="box">
-          <h4>멜론 Top10 인물</h4>
-          <div class="scrollable-box">
-            <table>
-              <thead>
-                <tr>
-                  <th>인물</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="aespa.html" style="color: black;">aespa - supernova</a></td>
-                </tr>
-                <tr>
-                  <td><a href="NewJeans.html" style="color: black;">NewJeans</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">3</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">4</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">5</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">6</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">7</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">8</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">9</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#" style="color: black;">10</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="special-text">
-        <h2>2024-08-03 ~</h2>
-      </div>
     </div>
-  </div>
-  <script>
-    // 페이지 로드 시 알림을 표시하는 스크립트
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!localStorage.getItem('alertShown')) {
-        alert("이 웹 사이트는 PC에 최적화되어 있습니다.  \n모바일에서 접속 시 레이아웃이 망가질 수 있습니다.");
-        localStorage.setItem('alertShown', 'true');
-      }
-    });
-  </script>
+
+    <script>
+        // 알림 닫기 버튼 이벤트 리스너
+        document.getElementById('close-notification').addEventListener('click', () => {
+            document.getElementById('notification').style.display = 'none';
+        });
+    </script>
 </body>
+
 </html>
